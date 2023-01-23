@@ -1,5 +1,12 @@
 # workgroup
-This is a collection of resources for people implementing and working with parallel and asynchronous code
+This is a collection of resources for people implementing and working with parallel and asynchronous code.
+
+# Table of questions
+
+|Question|Why this question|
+|What is the unit of schedulable code?|Some systems are actor based, some green threads, coroutines, lightweight threads or threads|
+|How is the unit of schedulable code scheduled?||
+|Is it cooperative or preemptive?||
 
 # Pony Lang
 
