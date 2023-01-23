@@ -5,7 +5,8 @@ This is a collection of resources for people implementing and working with paral
 
 |Question|Why this question|
 |--- | --- |
-|What is the unit of schedulable code?|Some systems are actor based, some green threads, fibers, coroutines, lightweight threads, processes or threads|
+|What is the unit of schedulable code?|Some systems are actor based, some green threads, fibers, coroutines, lightweight threads, processes, promises, events or threads|
+|Is there special language keywords?|Async/await keywords|
 |How is the unit of schedulable code scheduled?|An indepth explanation how |
 |Is it cooperative, preemptive or other?|Some languages are preempted and are descheduled by an outside process such as the operating system or a scheduler or scheduler thread |
 |What is the interaction with the type system?|Some langauges use type system to enforce safety|
@@ -37,3 +38,14 @@ From golang's documentation: https://go.dev/doc/
 "The Go programming language is an open source project to make programmers more productive.
 
 Go is expressive, concise, clean, and efficient. Its concurrency mechanisms make it easy to write programs that get the most out of multicore and networked machines, while its novel type system enables flexible and modular program construction. Go compiles quickly to machine code yet has the convenience of garbage collection and the power of run-time reflection. It's a fast, statically typed, compiled language that feels like a dynamically typed, interpreted language."
+
+# Erlang
+
+From Erlang website: https://www.erlang.org/
+
+"What is Erlang?
+Erlang is a programming language used to build massively scalable soft real-time systems with requirements on high availability. Some of its uses are in telecoms, banking, e-commerce, computer telephony and instant messaging. Erlang's runtime system has built-in support for concurrency, distribution and fault tolerance.
+
+What is OTP?
+OTP is set of Erlang libraries and design principles providing middle-ware to develop these systems. It includes its own distributed database, applications to interface towards other languages, debugging and release handling tools."
+
