@@ -3,13 +3,13 @@ This is a collection of resources for people implementing and working with paral
 
 # Table of questions
 
-Question|Why this question|
---- | --- | ---
-What is the unit of schedulable code?|Some systems are actor based, some green threads, fibers, coroutines, lightweight threads, processes or threads|
-How is the unit of schedulable code scheduled?|An indepth explanation how |
-Is it cooperative, preemptive or other?|Some languages are preempted and are descheduled by an outside process such as the operating system or a scheduler or scheduler thread |
-What is the interaction with the type system?|Some langauges use type system to enforce safety|
-How is asychrony represented?|How can you schedule multiple tasks at the same time?|
+|Question|Why this question|
+|--- | --- | ---|
+|What is the unit of schedulable code?|Some systems are actor based, some green threads, fibers, coroutines, lightweight threads, processes or threads|
+|How is the unit of schedulable code scheduled?|An indepth explanation how |
+|Is it cooperative, preemptive or other?|Some languages are preempted and are descheduled by an outside process such as the operating system or a scheduler or scheduler thread |
+|What is the interaction with the type system?|Some langauges use type system to enforce safety|
+|How is asychrony represented?|How can you schedule multiple tasks at the same time?|
 
 # Pony Lang
 
