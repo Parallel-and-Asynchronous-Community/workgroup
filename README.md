@@ -31,6 +31,30 @@ Inko features deterministic automatic memory management, move semantics, static 
 
 Inko supports 64-bits Linux, macOS and Windows, and installing Inko is quick and easy."
 
+## Scheduling
+
+Hey, welcome! A high-level overview of the scheduler is this:
+
+There's are N threads running code. Each thread has its own queue, and there's a global queue. Threads run the following steps in a loop:
+
+1. Process all jobs from the thread-local queue
+2. Steal a number of jobs from another queue
+3. Steal a number of jobs from the global queue
+4. Go to sleep
+
+The initial process is scheduled onto the global queue and thus picked up by a random thread. Newly spawned processes are stored in the thread-local queue. If there are sleeping threads, one is woken up.
+
+Thread-local queues have a fixed size, and new processes are scheduled onto the global queue if the local queue is full.
+
+Processes run for a fixed amount of time using reductions. This is just a simple counter: it starts at X, and the process suspends when it reaches zero. Currently the only thing that results in a reduction is a method call, which reduces by 1, but this may change in the future.
+
+For sockets we use non-blocking IO. If a socket would block we use epoll/kqueue/etc to poll for readiness in a separate OS thread, rescheduling the process if the socket is ready.
+
+For files and other forms of IO that don't support non-blocking IO, we essentially mark the thread as "blocked". When this happens, a backup thread is woken up and takes over work. When the blocked thread unblocks, it reschedules the process onto the global queue and the thread becomes a backup thread. The default thread count is N regular threads and N * 4 backup threads, where N is the number of CPU cores.
+[21:16]
+Things are being moved around a bit as part of the work on the native compiler, so code wise it's best to look at the native-compiler branch. The scheduler code lives in https://gitlab.com/inko-lang/inko/-/tree/native-compiler/vm/src/scheduler
+
+
 # Golang
 
 From golang's documentation: https://go.dev/doc/
