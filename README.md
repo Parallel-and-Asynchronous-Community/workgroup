@@ -86,3 +86,9 @@ JavaScript's dynamic capabilities include runtime object construction, variable 
 From Futhark's website: https://futhark-lang.org/
 
 "Futhark is a small programming language designed to be compiled to efficient parallel code. It is a statically typed, data-parallel, and purely functional array language in the ML family, and comes with a heavily optimising ahead-of-time compiler that presently generates either GPU code via CUDA and OpenCL, or multi-threaded CPU code."
+
+# Polyphony
+
+From polyphony's Github repository: https://github.com/digital-fabric/polyphony
+
+Polyphony is a library for building concurrent applications in Ruby. Polyphony harnesses the power of Ruby fibers to provide a cooperative, sequential coroutine-based concurrency model. Under the hood, Polyphony uses io_uring or libev to maximize I/O performance.
